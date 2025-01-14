@@ -1,7 +1,5 @@
 import './App.css'
 import { create } from 'zustand'
-// import { FolderLogo } from './logos/folder'
-// import { FileLogo } from './logos/file'
 import { v4 as uuidv4 } from 'uuid'
 import { ExplorerItem, ExplorerItemMetaData, tree } from './tree'
 import Button from '@mui/material/Button'
@@ -9,10 +7,6 @@ import FolderIcon from '@mui/icons-material/Folder';
 import InsertDriveFileIcon from '@mui/icons-material/InsertDriveFile';
 import { Box, Breadcrumbs, Container, Icon, Typography } from '@mui/material'
 
-
-// function capitalize(str: string): string {
-//   return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
-// }
 
 type TreeStore = {
   currentPath: Path
@@ -204,7 +198,6 @@ function BreadcrumbComponent() {
 
   const { setCurrentPath, currentPath } = treeStore()
 
-
   return <Breadcrumbs aria-label="breadcrumb">
     <Button onClick={() => {setCurrentPath(new Path())}} variant='text' size='small' color='info'>Home</Button>
     {currentPath.getLevels().map(() => (<BreadcrumbItemComponent />))}
@@ -214,7 +207,6 @@ function BreadcrumbComponent() {
 function Explorer() {
 
   const { currentPath, selectedItems, backPath, data, addExplorerItem } = treeStore()
-
 
   const handleBackClick = () => {
     backPath()
@@ -240,8 +232,6 @@ function Explorer() {
     }
   }
 
-
-
   return (
     <Container maxWidth={false}>
       <BreadcrumbComponent />
@@ -251,7 +241,6 @@ function Explorer() {
         <RenderExplorerItems data={data} selectedItems={selectedItems} currentPath={currentPath} />
       </Container>
     </Container>
-
   )
 }
 
