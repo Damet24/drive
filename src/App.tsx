@@ -234,7 +234,7 @@ function Explorer() {
 
   return (
     <Container maxWidth={false}>
-      <BreadcrumbComponent />
+      {/*<BreadcrumbComponent />*/}
       <Button onClick={handleBackClick} variant="text">Back</Button>
       <Button onClick={hanbleCreate} variant="contained">Create</Button>
       <Container sx={{ display: 'flex' }}>
